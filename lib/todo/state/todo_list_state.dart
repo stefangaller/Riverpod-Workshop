@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:riverpod_workshop/todo/model/todo.dart';
 
 part 'todo_list_state.freezed.dart';
 
@@ -8,6 +9,6 @@ class TodoListState with _$TodoListState {
 
   const factory TodoListState.error() = _TodoListStateError;
 
-  const factory TodoListState.data({required List<String> todos}) =
+  const factory TodoListState.data({required List<Todo> todos}) =
       _TodoListStateData;
 }

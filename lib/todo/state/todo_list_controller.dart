@@ -25,4 +25,25 @@ class TodoListController extends StateNotifier<TodoListState> {
       state = const TodoListState.error();
     }
   }
+
+  Future<void> addTodo(String name) async {
+    state = const TodoListState.loading();
+    try {
+      await _todoRepository.addTodo(name);
+      await load();
+    } catch (error){
+      log('could not add todo', error: error);
+    }
+  }
+
+  Future<void> removeTodo(int id) async {
+    state = const TodoListState.loading();
+    try {
+      await _todoRepository.removeTodo(id);
+      await load();
+    } catch (error){
+      log('could not remove todo', error: error);
+    }
+  }
+
 }

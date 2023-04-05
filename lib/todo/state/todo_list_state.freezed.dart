@@ -20,21 +20,21 @@ mixin _$TodoListState {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(List<String> todos) data,
+    required TResult Function(List<Todo> todos) data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? error,
-    TResult? Function(List<String> todos)? data,
+    TResult? Function(List<Todo> todos)? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<String> todos)? data,
+    TResult Function(List<Todo> todos)? data,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,7 +120,7 @@ class _$_TodoListStateLoading implements _TodoListStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(List<String> todos) data,
+    required TResult Function(List<Todo> todos) data,
   }) {
     return loading();
   }
@@ -130,7 +130,7 @@ class _$_TodoListStateLoading implements _TodoListStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? error,
-    TResult? Function(List<String> todos)? data,
+    TResult? Function(List<Todo> todos)? data,
   }) {
     return loading?.call();
   }
@@ -140,7 +140,7 @@ class _$_TodoListStateLoading implements _TodoListStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<String> todos)? data,
+    TResult Function(List<Todo> todos)? data,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -228,7 +228,7 @@ class _$_TodoListStateError implements _TodoListStateError {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(List<String> todos) data,
+    required TResult Function(List<Todo> todos) data,
   }) {
     return error();
   }
@@ -238,7 +238,7 @@ class _$_TodoListStateError implements _TodoListStateError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? error,
-    TResult? Function(List<String> todos)? data,
+    TResult? Function(List<Todo> todos)? data,
   }) {
     return error?.call();
   }
@@ -248,7 +248,7 @@ class _$_TodoListStateError implements _TodoListStateError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<String> todos)? data,
+    TResult Function(List<Todo> todos)? data,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -302,7 +302,7 @@ abstract class _$$_TodoListStateDataCopyWith<$Res> {
           $Res Function(_$_TodoListStateData) then) =
       __$$_TodoListStateDataCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<String> todos});
+  $Res call({List<Todo> todos});
 }
 
 /// @nodoc
@@ -322,7 +322,7 @@ class __$$_TodoListStateDataCopyWithImpl<$Res>
       todos: null == todos
           ? _value._todos
           : todos // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<Todo>,
     ));
   }
 }
@@ -330,12 +330,12 @@ class __$$_TodoListStateDataCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_TodoListStateData implements _TodoListStateData {
-  const _$_TodoListStateData({required final List<String> todos})
+  const _$_TodoListStateData({required final List<Todo> todos})
       : _todos = todos;
 
-  final List<String> _todos;
+  final List<Todo> _todos;
   @override
-  List<String> get todos {
+  List<Todo> get todos {
     if (_todos is EqualUnmodifiableListView) return _todos;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_todos);
@@ -370,7 +370,7 @@ class _$_TodoListStateData implements _TodoListStateData {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(List<String> todos) data,
+    required TResult Function(List<Todo> todos) data,
   }) {
     return data(todos);
   }
@@ -380,7 +380,7 @@ class _$_TodoListStateData implements _TodoListStateData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? error,
-    TResult? Function(List<String> todos)? data,
+    TResult? Function(List<Todo> todos)? data,
   }) {
     return data?.call(todos);
   }
@@ -390,7 +390,7 @@ class _$_TodoListStateData implements _TodoListStateData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<String> todos)? data,
+    TResult Function(List<Todo> todos)? data,
     required TResult orElse(),
   }) {
     if (data != null) {
@@ -435,10 +435,10 @@ class _$_TodoListStateData implements _TodoListStateData {
 }
 
 abstract class _TodoListStateData implements TodoListState {
-  const factory _TodoListStateData({required final List<String> todos}) =
+  const factory _TodoListStateData({required final List<Todo> todos}) =
       _$_TodoListStateData;
 
-  List<String> get todos;
+  List<Todo> get todos;
   @JsonKey(ignore: true)
   _$$_TodoListStateDataCopyWith<_$_TodoListStateData> get copyWith =>
       throw _privateConstructorUsedError;
