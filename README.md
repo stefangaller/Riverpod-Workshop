@@ -30,3 +30,36 @@ Contains the UI elements of the application. It watches the state of the `TodoLi
 5. Implement pull to refresh
 6. Implement insertion of a new todo
 7. Implement deletion of a todo
+
+## Hints
+
+### Used Packages
+In this project following packages have been added:
+
+#### flutter_riverpod
+Used for state management
+
+#### json_annotation
+Used when generating models using `freezed`. Allows to convert the models to JSON.
+
+#### freezed_annotation
+Needed by the `freezed` package to annotate freezed classes.
+
+#### collection (optional)
+Adds useful utility functions when working with collections
+
+#### build_runner
+Handles code generation
+
+#### freezed
+Generates utility functions for models
+
+#### json_serializable
+Allows serialization and deserializations for models to/from JSON.
+
+### Code Generation
+We use the `freezed` package to generate files. Use following command to run `build_runner`.
+```shell
+fvm dart run build_runner watch --delete-conflicting-outputs  # with fvm
+dart run build_runner watch --delete-conflicting-outputs # without fvm  
+```
