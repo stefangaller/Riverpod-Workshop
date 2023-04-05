@@ -9,45 +9,22 @@ class TodoListPage extends ConsumerWidget {
 
 
   _addTodo(WidgetRef ref) {
-    final date = DateTime.now();
-    ref.read(todoListControllerProvider.notifier).addTodo('New Todo $date');
+    // TODO use TodoListController to add Todo
   }
 
   _removeTodo(WidgetRef ref, int todoId){
-    ref.read(todoListControllerProvider.notifier).removeTodo(todoId);
+    // TODO use TodoListController to remove Todo
   }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(todoListControllerProvider);
+    // TODO watch the state of TodoListController
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Todos'),
       ),
-      body: state.when(
-        loading: () => const LoadingView(),
-        error: () => ErrorView(
-          message: 'Could not load todos',
-          onReload: ref.read(todoListControllerProvider.notifier).load,
-        ),
-        data: (todos) => RefreshIndicator(
-          onRefresh: ref.read(todoListControllerProvider.notifier).load,
-          child: ListView.builder(
-            itemCount: todos.length,
-            itemBuilder: (context, index) {
-              final todo = todos[index];
-              return ListTile(
-                title: Text(todo.title),
-                trailing: IconButton(
-                  icon: const Icon(Icons.delete),
-                  onPressed:  () => _removeTodo(ref, todo.id),
-                ),
-              );
-            },
-          ),
-        ),
-      ),
+      body: const Placeholder(), // TODO show body dependent on state
       floatingActionButton: FloatingActionButton(
         onPressed: () => _addTodo(ref),
         child: const Icon(Icons.add),
